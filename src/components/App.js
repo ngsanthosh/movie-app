@@ -2,6 +2,7 @@
 import Header from "./Header";
 import Home from "./Home";
 import Moviecard from "./Moviecard"
+import Movielist from "./Movielist"
 
 function App() {
   return (
@@ -9,7 +10,10 @@ function App() {
       {/* <h1>Hello World!!</h1> */}
       <Header />
       {/* <Home /> */}
-      <Moviecard />
+      {/* <Moviecard /> */}
+      <div className="container">
+        <Movielist />
+      </div>
     </div>
   );
 }
