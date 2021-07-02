@@ -10,7 +10,7 @@ class Header extends Component {
                         <div className="col-md-4">
                             <h2>Movie Browser</h2> 
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-8">
                             <input type="search" placeholder="Type something here to search.." className="form-control"/>
                         </div>
                     </div>
