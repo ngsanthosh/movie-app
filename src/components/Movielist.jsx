@@ -29,12 +29,24 @@ class Movielist extends Component {
 
     render() {
         // this.fetchmovies();
+        // if(movies==[]){
+        //     <h3>No Movies found</h3>
+        // }
+        // this.state.movies ? console.log("Present"):console.log("Absent");
+        if(this.state.movies !== undefined){
         const Movielist = this.state.movies.map((m,index) =><Moviecard movie={m} key={index}/>)
         return (
             <div className="row">
                 { Movielist }
             </div>
         );
+        }
+        else{
+            return(
+                <h3 className="text-center">flobbergaast!!...Nothing Found vroo...Olunga search pannunga!!</h3>
+            );
+        }
+
     }
 }
 

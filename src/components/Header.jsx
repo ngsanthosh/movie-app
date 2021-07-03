@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {withRouter} from "react-router-dom"
+import {withRouter, Link} from "react-router-dom"
 import {queryString} from 'querystring'
 
 // const a = { display:'flex'}
@@ -20,7 +20,7 @@ class Header extends Component {
           <div className="row">
             <div className="col-md-4">
               <h2>
-                <b>Movie Browser</b>
+               <b> <Link to="/" style={{textDecoration:'none'}} title="Home">Movie Browser</Link></b>
               </h2>
             </div>
             <div className="col-md-7">
