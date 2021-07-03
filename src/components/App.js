@@ -16,7 +16,7 @@ function App() {
         
         <div className="container">
         <Route path="/" exact={true} component={Home} />
-        <Route path="/movies" component={Movielist} />
+        <Route path="/movies/" exact={false} component={Movielist} />
          
         </div>
       </div>

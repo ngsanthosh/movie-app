@@ -10,7 +10,7 @@ class Header extends Component {
       eventeyyy.preventDefault();
       console.log("this is ", this);
       console.log("this is ", this.refs.govaalu.value);
-      this.props.history.push("/movies/?s="+this.refs.govaalu.value.split(' ').join('+'))
+      this.props.history.push("/movies/?s="+this.refs.govaalu.value.trim().split(' ').join('+'))
   }
 
   render() {
@@ -20,7 +20,7 @@ class Header extends Component {
           <div className="row">
             <div className="col-md-4">
               <h2>
-               <b> <Link to="/" style={{textDecoration:'none'}} title="Home">Movie Browser</Link></b>
+               <b> <Link to="/" style={{textDecoration:'none'}} title="Home">🎬 Movie Browser </Link></b>
               </h2>
             </div>
             <div className="col-md-7">
