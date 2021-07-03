@@ -3,13 +3,14 @@ import React from 'react';
 const ob={ width:'400px' }
 const Moviecard = (props) => {
     let {movie} = props
+    // console.log(movie);
     return  <div className="col-md-3">
                 <div className="card bg-dark">
 
                     <img src={movie.Poster} alt={movie.Title} className="card-img-top"/>
                     <div className="card-body text-center">
                         <div className="card-title">{movie.Title}</div>
-                        <div className="card-text">{movie.Director}</div>
+                        <div className="card-text">{movie.Year}</div>
                     </div>
                 </div>
             </div>

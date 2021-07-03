@@ -11,6 +11,12 @@ class Movielist extends Component {
         console.log(this.props);
     }
 
+    componentDidUpdate(palasu){
+        if(this.props.location!==palasu.location){
+            this.fetchmovies();
+        }
+    }
+
     fetchmovies=()=>{
         // let search="HOME ALONE"
         let queryy =queryString.parse(this.props.location.search)
@@ -23,7 +29,7 @@ class Movielist extends Component {
 
     render() {
         // this.fetchmovies();
-        const Movielist = this.state.movies.map(m=><Moviecard movie={m} key={m.imdbID}/>)
+        const Movielist = this.state.movies.map((m,index) =><Moviecard movie={m} key={index}/>)
         return (
             <div className="row">
                 { Movielist }
