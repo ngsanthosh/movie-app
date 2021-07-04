@@ -27,7 +27,7 @@ class Header extends Component {
               <form onSubmit={this.submitHandler}>
                 <input type="search"
                     ref="govaalu"
-                  placeholder="Type something here to search.."
+                  placeholder="Type a Movie name here to search.."
                   className="form-control" />
               </form>
             </div>
