@@ -4,6 +4,7 @@ import Home from "./Home";
 import Moviecard from "./Moviecard"
 import Movielist from "./Movielist"
 import {BrowserRouter, Route} from 'react-router-dom'
+import Moviedetail from "./Moviedetail";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         
         <div className="container">
         <Route path="/" exact={true} component={Home} />
-        <Route path="/movies/" exact={false} component={Movielist} />
+        <Route path="/movies" component={Movielist} />
+        <Route path="/details" component={Moviedetail} />
          
         </div>
       </div>

@@ -14,6 +14,7 @@ class Movielist extends Component {
   componentDidUpdate(palasu) {
     if (this.props.location !== palasu.location) {
       this.fetchmovies();
+      this.forceUpdate();
     }
   }
 
@@ -28,24 +29,32 @@ class Movielist extends Component {
   };
 
   render() {
+    let { movies } = this.state;
     // this.fetchmovies();
     // if(movies==[]){
     //     <h3>No Movies found</h3>
     // }
     // this.state.movies ? console.log("Present"):console.log("Absent");
-    if (this.state.movies !== undefined) {
-      const Movielist = this.state.movies.map((m, index) => (
-        <Moviecard movie={m} key={index} />
-      ));
-      return <div className="row">{Movielist}</div>;
-    } 
-    else {
-      return (
-        <h3 className="text-center">
-          flobbergaast!!🤯...Nothing Found vroo😒...Olunga search pannunga!!🤷‍♂️
-        </h3>
-      );
+    let output = (
+      <div className="text-center">
+        <img src="/blank.gif" alt="Loading..." width="95px" />
+      </div>
+    );
+    if (movies && Object.keys(movies).length > 0) {
+      if (this.state.movies !== undefined) {
+        const Movielist = this.state.movies.map((m, index) => (
+          <Moviecard movie={m} key={index} />
+        ));
+        output = <div className="row">{Movielist}</div>;
+      } else {
+        return (output = (
+          <h3 className="text-center">
+            flobbergaast!!🤯...Nothing Found vroo😒...Olunga search pannunga!!🤷‍♂️
+          </h3>
+        ));
+      }
     }
+    return output;
   }
 }
 

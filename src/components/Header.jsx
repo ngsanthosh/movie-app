@@ -9,7 +9,7 @@ class Header extends Component {
   submitHandler = (eventeyyy) => {
       eventeyyy.preventDefault();
       console.log("this is ", this);
-      console.log("this is ", this.refs.govaalu.value);
+      console.log("search la kuduthathu", this.refs.govaalu.value);
       this.props.history.push("/movies/?s="+this.refs.govaalu.value.trim().split(' ').join('+'))
   }
 
