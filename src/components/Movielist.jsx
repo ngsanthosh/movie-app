@@ -41,20 +41,30 @@ class Movielist extends Component {
       </div>
     );
     if (movies && Object.keys(movies).length > 0) {
-      if (this.state.movies !== undefined) {
+      // if (this.state.movies !== undefined) {
         const Movielist = this.state.movies.map((m, index) => (
           <Moviecard movie={m} key={index} />
         ));
         output = <div className="row">{Movielist}</div>;
-      } else {
-        return (output = (
-          <h3 className="text-center">
-            flobbergaast!!🤯...Nothing Found vroo😒...Olunga search pannunga!!🤷‍♂️
-          </h3>
-        ));
-      }
+      // else if(Object.keys(movies).length == 0) {
+      //   return (output = (
+      //     <h3 className="text-center">
+      //       flobbergaast!!🤯...Nothing Found vroo😒...Olunga search pannunga!!🤷‍♂️
+      //     </h3>
+      //   ));
+      // }
     }
+    else if(this.state.movies === undefined) {
+      return (output = (
+        <h3 className="text-center">
+          flobbergaast!!🤯...Nothing Found vroo😒...Olunga search pannunga!!🤷‍♂️
+        </h3>
+      ));
+    }
+    
+
     return output;
+      
   }
 }
 

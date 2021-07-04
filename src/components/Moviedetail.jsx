@@ -66,8 +66,8 @@ class Moviedetail extends Component {
                                      <td>{movie.Actors}</td>
                                  </tr>
                                  <tr>
-                                     <td>Language</td>
-                                     <td>{movie.Language}</td>
+                                     <td>Type</td>
+                                     <td>{movie.Type}</td>
                                  </tr>
                                  <tr>
                                      <td>Genre</td>
@@ -80,6 +80,18 @@ class Moviedetail extends Component {
                                  <tr>
                                      <td>Writer</td>
                                      <td>{movie.Writer}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Language</td>
+                                     <td>{movie.Language}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Imdb Rating</td>
+                                     <td>{movie.imdbRating}</td>
+                                 </tr>
+                                 <tr>
+                                     <td>Released</td>
+                                     <td>{movie.Released}</td>
                                  </tr>
                                  <tr>
                                      <td>Runtime</td>
