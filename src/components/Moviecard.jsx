@@ -1,14 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 // const movie = {"Title":"The Hangover","Director":"Todd Phillips","Year":"2009","imdbID":"tt1119646","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BNGQwZjg5YmYtY2VkNC00NzliLTljYTctNzI5NmU3MjE2ODQzXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"}
-const ob={ width:'400px' }
+// const ob={ width:'400px' }
 // const imgg ={ float: 'left',
 //     width:  '100px',
 //     height: '100px'}
 const Moviecard = (props) => {
     const clickpannitaan=(imdb)=>{
         console.log('Imdb ithaan da',imdb);
-        props.history.push('/details/?i='+imdb)
+        props.history.push('/details?i='+imdb)
     }
 
     let {movie} = props

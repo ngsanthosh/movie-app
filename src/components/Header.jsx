@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {withRouter, Link} from "react-router-dom"
-import {queryString} from 'querystring'
+// import {queryString} from 'querystring'
 
 // const a = { display:'flex'}
 // const padd = {  }
@@ -10,7 +10,7 @@ class Header extends Component {
       eventeyyy.preventDefault();
       console.log("this is ", this);
       console.log("search la kuduthathu", this.refs.govaalu.value);
-      this.props.history.push("/movies/?s="+this.refs.govaalu.value.trim().split(' ').join('+'))
+      this.props.history.push("/movies?s="+this.refs.govaalu.value.trim().split(' ').join('+'))
   }
 
   render() {
@@ -20,7 +20,7 @@ class Header extends Component {
           <div className="row">
             <div className="col-md-4">
               <h2>
-               <b> <Link to="/" style={{textDecoration:'none'}} title="Home">🎬 Movie Browser </Link></b>
+               <div className="text-center"><b><Link to="/" style={{textDecoration:'none'}} title="Home">🎬 Movie Browser </Link></b></div>
               </h2>
             </div>
             <div className="col-md-7">

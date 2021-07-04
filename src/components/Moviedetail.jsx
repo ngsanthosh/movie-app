@@ -86,7 +86,7 @@ class Moviedetail extends Component {
                                      <td>{movie.Language}</td>
                                  </tr>
                                  <tr>
-                                     <td>Imdb Rating</td>
+                                     <td>IMdb Rating</td>
                                      <td>{movie.imdbRating}</td>
                                  </tr>
                                  <tr>
@@ -104,7 +104,9 @@ class Moviedetail extends Component {
                          <button className="btn btn-secondary" onClick={()=>this.props.history.goBack()}>
                              Back
                         </button>
+                        <p></p>
                      </div>
+                     {/* <p></p> */}
                  </div>
                 //   {/* </div> */}
           }
