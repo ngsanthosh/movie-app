@@ -18,13 +18,19 @@ const Moviecard = (props) => {
     // }
     // console.log(movie);
     return  <div className="col-md-3">
-                <div className="card bg-dark" onClick={()=>clickpannitaan(movie.imdbID)}>
+        <div>
 
+        </div>
+                <div className="card bg-dark">
+                 
+                    <div onClick={()=>clickpannitaan(movie.imdbID)}>
                     <img src={movie.Poster} alt={movie.Title} className="card-img-top"/>
                     <div className="card-body text-center">
                         <div className="card-title">{movie.Title}</div>
                         <div className="card-text">{movie.Year}</div>
                     </div>
+                    </div>
+                    <div className="btn btn-primary">Add to Favorites 💘</div>
                 </div>
             </div>
             
