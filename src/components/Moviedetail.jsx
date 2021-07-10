@@ -22,7 +22,7 @@ class Moviedetail extends Component {
         Axios.get(`http://www.omdbapi.com/?i=${queryy.i}&apikey=7e383409`)
           .then((came) => came.data)
         //   .then((datam) => datam.Search)
-          .then((moviecame) => this.setState({ movie: moviecame }))
+          .then((moviecame) => this.setState({ movie: moviecame,...this.state.movie }))
         //   .then(console.log);
       }; 
     
