@@ -28,7 +28,7 @@ class Header extends Component {
                       style={{ textDecoration: "none" }}
                       title="Home"
                     >
-                      🎬 Movie Browser 
+                      🎬 Movie Browser
                     </Link>
                   </b>
                 </div>
@@ -44,10 +44,16 @@ class Header extends Component {
                 />
               </form>
             </div>
-            <div className="col-md-2 text-center">
+            <div className="col-md-2 text-center  ">
               {/* <button type="submit">Search</button> */}
-              <Link to="/favorites" style={{textDecoration:"none", fontFamily:'consolas' }}>
-                <h3>Favourites</h3>
+              <Link
+                to="/favorites"
+                style={{
+                  textDecoration: "none",
+                  fontFamily: "consolas",
+                }}
+              >
+                <h3 className="btn btn-primary ">Favourites 💚</h3>
               </Link>
             </div>
           </div>

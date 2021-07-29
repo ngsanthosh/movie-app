@@ -12,7 +12,7 @@ class Favorites extends React.Component {
     //   const jerry = <div>FAVORITES</div>
       const common = <h2 className="text-center">Favourites</h2>
       if(this.props.state === undefined || this.props.state.length === 0 ){
-          return <div><h1 className="text-center">Favourites</h1><p></p><h5 className="text-center" style={{fontFamily:"consolas"}}>No Movies to display</h5></div> 
+          return <div><h1 className="text-center bord" >Favourites</h1><p></p><h5 className="text-center" style={{fontFamily:"consolas"}}>No Movies to display</h5></div> 
       }
       
     console.log("favourites:",this.props.state);
