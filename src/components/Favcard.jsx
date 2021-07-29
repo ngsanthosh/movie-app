@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import Favorites from "./Favorites";
 import { Link, Route } from "react-router-dom";
 import { classImplements } from "@babel/types";
-import { addmovietofav } from "../Redux/actions";
+import { addmovietofav, removemoviefav } from "../Redux/actions";
 import { connect } from "react-redux";
 // const movie = {"Title":"The Hangover","Director":"Todd Phillips","Year":"2009","imdbID":"tt1119646","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BNGQwZjg5YmYtY2VkNC00NzliLTljYTctNzI5NmU3MjE2ODQzXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"}
 // const ob={ width:'400px' }
@@ -11,9 +11,8 @@ import { connect } from "react-redux";
 //     width:  '100px',
 //     height: '100px'}
 
-class Moviecard extends React.Component {
+class Favcard extends React.Component {
   render() {
-    let isclicked = "false";
     const props = this.props;
     console.log("From moviecard:", props);
     const clickpannitaan = (imdb) => {
@@ -40,25 +39,11 @@ class Moviecard extends React.Component {
     //     // </div>
     // }
     const callme = (mvoie) => {
-      isclicked = true;
-
-      alert("Movie successfully added to favorites!!");
       console.log(mvoie.Title);
-
-      this.props.dispatch(addmovietofav(mvoie));
-      // const isthere=this.props.state.indexOf(mvoie)
-      // console.log(isthere)
+      this.props.dispatch(removemoviefav(mvoie));
     };
     // const {favs}= this.props.fav
-    console.log("Favs array", this.props.state);
-    if (this.props.state !== undefined) {
-      let j1 = JSON.stringify(this.props.state)
-      let j2 = JSON.stringify(movie)
-      console.log("states",j1)
-      console.log("movie",j2)
-      const hello = j1.indexOf(j2);
-      console.log("hello", hello);
-    }
+    console.log("Favs array",this.props.state);
     return (
       <div className="col-md-3">
         <div></div>
@@ -77,19 +62,9 @@ class Moviecard extends React.Component {
             </div>
           </div>
           {/* <Link to="/favorites" style={{color:"white", textDecoration:'none'}}><div className="card btn btn-primary" onClick={()=>callme(movie)}>Add to Favorites 💘</div></Link> */}
-          {isclicked ? (
-            <div
-              className="card btn btn-primary"
-              onClick={() => callme(movie)}
-              disabled
-            >
-              Add to Favorites 💘
-            </div>
-          ) : (
-            <div className="card btn btn-primary" onClick={() => callme(movie)}>
-              Add to Favorites 💘
-            </div>
-          )}
+          <div className="card btn btn-danger" onClick={() => callme(movie)}>
+            Remove from Favorites 💔
+          </div>
         </div>
         <p></p>
       </div>
@@ -99,8 +74,8 @@ class Moviecard extends React.Component {
 
 const mapStatetoprops = (state) => {
   return {
-    state,
+    state
   };
 };
 
-export default connect(mapStatetoprops)(withRouter(Moviecard));
+export default connect(mapStatetoprops)(withRouter(Favcard));
